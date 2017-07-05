@@ -480,7 +480,8 @@
 }
 .client{
     text-align: center;
-    background: url(../img/bg4.jpg)  50% 90%  ;
+    background: url(../img/bg4.jpg) 50% 90%  ;
+    background-size: 100%;
   /* background-size: cover; 
     -moz-background-size: cover; */
 
@@ -576,6 +577,8 @@
 }
 .quelity{
     background: url(../img/bg5.jpg) 50% 10%;
+    background-size: 100%;
+
 }
 .quelity-box{
     width: 100%;
@@ -681,6 +684,7 @@
 }
 .add{
     background: url(../img/bg6.jpg) 50% 45%;
+    background-size: 100%;
 }
 .add-title{
     margin-bottom: 30px;
@@ -943,6 +947,7 @@ td u{
 }
 .contact{
     background: url(../img/bg8.jpg) 50% bottom;
+    background-size: 100%;
 }
 
 .contact-top{
