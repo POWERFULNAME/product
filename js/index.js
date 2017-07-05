@@ -1,19 +1,24 @@
- var lin =null;
+ var lin =$('#menu').find('#li1').offset().left+15+'px';
 window.onload = function(){
-    lin =   $('#line').css('left');           
+
+    
+    
+    $('#line').css('left',lin)
+    lin =   $('#line').css('left');    
     setInterval(scroll,3000);
     $('.sl1-txt').animate({'left':'50%','margin-left':'-120px','opacity':'1'},800);
     $('.sl1-9').animate({'left':'50%','margin-left':'-245px','opacity':'1'},800);
-    console.log(lin)
+    //console.log(lin)
      $('#menu li').each(function(i){
         $(this).on('mouseenter',function(){
-
+           var  linover = $(this).offset().left+15+'px';
+            //console.log(lin)
              //lin =   $('#line').css('left');
             $(this).addClass('active1')
-            $('#line').stop().animate({'left':422+(i*82)},200)  
+            $('#line').stop().animate({'left':linover},200)  
         });
         $(this).on('click',function(){
-             lin =   $('#line').css('left');           
+            lin =   $(this).offset().left+15+'px';           
         }); 
         
         $(this).on('mouseleave',function(){
@@ -37,8 +42,8 @@ window.onload = function(){
             scrollingSpeed:300,//滚动速度
             touchSensitivity:100,//滚轮敏感度
             afterLoad: function(anchorLink, index){
-                lin =  $('#line').css('left');
-                console.log(lin)
+                //lin =  $('#line').css('left');
+                //console.log(lin)
                 if (index==1) {
                     $('.top-bar').css('opacity','0')
                 } else {
@@ -75,7 +80,10 @@ window.onload = function(){
 
             },
             onLeave:function(index,nextIndex){
-                 $('#line').animate({'left':423+((nextIndex-1)*82)},200);  
+                lin = $('#menu').children('li').eq(nextIndex-1).offset().left+15+'px';
+                    
+                $('#line').animate({'left':lin},200);
+               
 
             }
 
